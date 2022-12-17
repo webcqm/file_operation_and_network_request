@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<int> _readCounter() async {
     try {
       File file = await _getLocalFile();
-      // 读取点击次数（以字符串）
+      // 读取点击次数（以字符串）,
       String contents = await file.readAsString();
       return int.parse(contents);
     } on FileSystemException {
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
-    // 将点击次数以字符串类型写到文件中
+    // 将点击次数以字符串类型写到文件中，
     await (await _getLocalFile()).writeAsString('$_counter');
   }
 
