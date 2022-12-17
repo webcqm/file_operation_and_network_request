@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:async';
-import 'httpclient.dart';
+import 'SocketRoute.dart';
+import 'HttpTestRoute.dart';
 import 'package:path_provider/path_provider.dart';
 void main() {
   runApp(const MyApp());
@@ -77,17 +78,29 @@ class _MyHomePageState extends State<MyHomePage> {
         child:Column (
           children:<Widget>[Text('点击了 $_counter 次'),
         TextButton(
-          child: Text("open new route"),
-          onPressed: () {
-            //导航到新路由
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {
-                return HttpTestRoute();
-              }),
-            );
-          },
-        ),],
+              child: Text("SocketRoute"),
+              onPressed: () {
+                //导航到新路由
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return SocketRoute();
+                  }),
+                );
+              },
+            ),
+            TextButton(
+              child: Text("HttpTestRoute"),
+              onPressed: () {
+                //导航到新路由
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return HttpTestRoute();
+                  }),
+                );
+              },
+            ),],
         ),
       ),
       floatingActionButton: FloatingActionButton(
